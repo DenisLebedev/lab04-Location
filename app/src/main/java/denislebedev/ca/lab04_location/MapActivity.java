@@ -6,8 +6,10 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 
 public class MapActivity extends AppCompatActivity {
+    private EditText getLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,15 @@ public class MapActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+        getLocation = (EditText) findViewById(R.id.geoLocation);
+
+        String userCountry = getIntent().getExtras()
+                .getString(getResources().getString(R.string.country));
+
+
+
     }
 
 }

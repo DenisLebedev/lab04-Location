@@ -25,6 +25,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void launchPreciseSearchActivity(View view) {
+        Intent intent = new Intent(this, MapActivity.class);
+
+        intent.putExtra(getResources().getString(R.string.country),
+                getResources().getString(R.string.country));
+
+        startActivity(intent);
+    }
+
+
     public void googleMapAPI(View view) {
         Uri country = Uri.parse("geo:0.0,0.0?q=" +
                 Uri.encode(getResources().getString(R.string.country)));

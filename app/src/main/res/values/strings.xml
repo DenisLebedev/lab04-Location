@@ -2,4 +2,7 @@
     <string name="app_name">Lab04-Location</string>
     <string name="country">Canada</string>
     <string name="title_activity_map">MapActivity</string>
+
+    <string name="butLoc">Apply given location</string>
+    <string name="moveActivity">Precise research</string>
 </resources>

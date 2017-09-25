@@ -31,13 +31,16 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+
     <EditText
+        android:id="@+id/geoLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/butLoc"/>
 
     <TextView
         android:layout_width="match_parent"
