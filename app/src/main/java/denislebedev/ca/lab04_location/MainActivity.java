@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void playMedia(Uri file) {
+    private void playMedia(Uri file) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(file);
         if (intent.resolveActivity(getPackageManager()) != null) {

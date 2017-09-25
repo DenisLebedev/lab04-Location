@@ -5,4 +5,5 @@
 
     <string name="butLoc">Apply given location</string>
     <string name="moveActivity">Precise research</string>
+    <string name="invalidLoc">Location given is invalid</string>
 </resources>
