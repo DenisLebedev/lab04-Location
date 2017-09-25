@@ -13,9 +13,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imgBut = (ImageButton) findViewById(R.id.imgBut);
-        Uri country = Uri.parse("geo:45.489374,-73.588298?q=" +
+        /*Uri country = Uri.parse("geo:45.489374,-73.588298?q=" +
                 Uri.encode(getResources().getString(R.string.country)));
-        playMedia(country);
+        playMedia(country);*/
     }
 
     public void playMedia(Uri file) {
