@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,9 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imgBut = (ImageButton) findViewById(R.id.imgBut);
-        /*Uri country = Uri.parse("geo:45.489374,-73.588298?q=" +
-                Uri.encode(getResources().getString(R.string.country)));
-        playMedia(country);*/
+
     }
 
     public void playMedia(Uri file) {
@@ -24,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
+    }
+
+    public void googleMapAPI(View view) {
+        Uri country = Uri.parse("geo:0.0,0.0?q=" +
+                Uri.encode(getResources().getString(R.string.country)));
+        playMedia(country);
     }
 
 }
