@@ -1,5 +1,6 @@
 package denislebedev.ca.lab04_location;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,7 +33,7 @@ public class MapActivity extends AppCompatActivity {
     public void parseUserResult(View view) {
         String userInput = getLocation.getText().toString();
 
-        if(userInput.isEmpty() || userInput == null) {
+        if(!validateData(userInput)) {
             getLocation.setText("");
             errorMsg.setText(getResources().getString(R.string.invalidLoc));
         } else {
@@ -42,6 +43,38 @@ public class MapActivity extends AppCompatActivity {
         }
     }
 
+
+    public void googleSearchLocation(View view) {
+        String userInput = getLocation.getText().toString();
+
+        if(!validateData(userInput)) {
+            getLocation.setText("");
+            errorMsg.setText(getResources().getString(R.string.invalidLoc));
+        } else {
+            searchWeb(userInput);
+        }
+    }
+
+
+    /**
+     * Validate user input
+     *
+     * @param result
+     * @return true if valid else false for invalid
+     */
+    private boolean validateData(String result) {
+        if(result.isEmpty() || result == null)
+            return false;
+        return true;
+    }
+
+    private void searchWeb(String query) {
+        Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+        intent.putExtra(SearchManager.QUERY, query);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+    }
 
     private void playMedia(Uri file) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
